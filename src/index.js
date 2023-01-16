@@ -1,13 +1,11 @@
 import "./style/style.css"
-import { knightMoves } from "./javascript/knightMoves.js"
+import { knightMoves, getPath, printPath } from "./javascript/knightMoves"
+import { test } from "./javascript/script"
 
-const position = prompt("Enter an x, y coordinate: ")
+//test()
 
-const positionArr = position.split(" ")
+const path = knightMoves(7, 7)
 
-console.log(
-    knightMoves(
-        Number.parseInt(positionArr[0]),
-        Number.parseInt(positionArr[1])
-    )
-)
+const result = getPath(path)
+
+printPath(result, path.step)
