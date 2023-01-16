@@ -4,7 +4,7 @@ import { test } from "./javascript/script"
 
 //test()
 
-const path = knightMoves(7, 7)
+const path = knightMoves([3, 3], [4, 3])
 
 const result = getPath(path)
 

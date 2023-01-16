@@ -1,8 +1,8 @@
-export function knightMoves(x, y) {
+export function knightMoves(start = [0, 0], end = [7, 7]) {
     // keep track of visited locations
     const visited = new Map()
 
-    const queue = [{ curr: [0, 0], prev: null }] // start position
+    const queue = [{ curr: start, prev: null }] // start position
 
     const knightsMovement = [
         [1, 2],
@@ -26,7 +26,7 @@ export function knightMoves(x, y) {
             if (visited.has(visitedKey)) continue
             visited.set(visitedKey, true)
             // if target found
-            if (current.curr[0] === x && current.curr[1] === y) {
+            if (current.curr[0] === end[0] && current.curr[1] === end[1]) {
                 isSearching = false
                 return { current, step }
             }
@@ -84,7 +84,7 @@ export function getPath(path) {
 export function printPath(array, steps) {
     console.log(`You made it in ${steps} moves! Here's your path:`)
     while (array.length > 0) {
-        console.log(`\t${array.pop()}`)
+        console.log(`\t[${array.pop()}]`)
     }
 }
 
