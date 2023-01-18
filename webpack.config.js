@@ -17,6 +17,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: "Knights Travials",
+            template: "./src/chessboard.html",
         }),
     ],
 

@@ -1,0 +1,32 @@
+body {
+    background: grey;
+    box-sizing: border-box;
+}
+
+#numbers {
+    transform: rotate(90deg);
+}
+
+#numbers td {
+    transform: rotate(-90deg);
+}
+
+td {
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.white {
+    background: tan;
+}
+
+.black {
+    background: brown;
+}
+
+.start-knight {
+    text-align: end;
+    content: url("./img/knight.svg");
+}
