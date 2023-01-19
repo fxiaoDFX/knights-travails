@@ -1,7 +1,7 @@
 import "./style.css"
 import { knightMoves, getPath, printPath } from "./javascript/knightMoves"
 import { test } from "./javascript/script"
-import makeBoard from "./javascript/chessboard"
+import chessboard from "./javascript/chessboard"
 
 //test()
 
@@ -11,4 +11,4 @@ const result = getPath(path)
 
 printPath(result, path.step)
 
-makeBoard()
+chessboard()

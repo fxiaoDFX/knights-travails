@@ -1,8 +1,15 @@
-const knightSVG = require("../img/knight.svg")
+const startKnight = require("../img/knight-start.svg")
+const endKnight = require("../img/knight-end.svg")
 
 const board = document.getElementById("board") // gets reference to table
 
-export default function makeBoard() {
+export default function chessboard() {
+    makeChessboard()
+    const start = addLeftClickEvent()
+    const end = addRightClickEvent()
+}
+
+function makeChessboard() {
     for (let i = 0; i < 8; i++) {
         // row
         const row = document.createElement("tr")
@@ -28,7 +35,6 @@ export default function makeBoard() {
         board.append(row)
     }
     addXAxis()
-    addLeftClickEvent()
 }
 
 function addXAxis() {
@@ -58,13 +64,23 @@ function addLeftClickEvent() {
         if (target.classList.contains("cell")) {
             clear("start-knight")
             target.classList.add("start-knight")
-            console.log("cell clicked")
+            console.log(target)
+            return target.id
         }
     })
 }
 
 function addRightClickEvent() {
-    return
+    board.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+        const target = e.target
+        if (target.classList.contains("cell")) {
+            clear("end-knight")
+            target.classList.add("end-knight")
+            console.log(target)
+            return target.id
+        }
+    })
 }
 
 function clear(className) {
